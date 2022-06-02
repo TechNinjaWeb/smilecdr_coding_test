@@ -23,8 +23,10 @@ function PatientList({patients}) {
     try {
       const foundPatient = await fetch(addSearchParamsToUrl(FETCH_PATIENTS_URL, {given: firstname, family: lastname}))
       setMyPatients(filter(patients, firstname, lastname));
+      
       console.log("Submitting", {evt, other, firstname, lastname, form, foundPatient});
       if (foundPatient.ok === false) { throw Error(`${foundPatient.status}: Could not retrieve patients`)}
+      setMyPatients([foundPatient]); // Does not work until Fhir server implements [given,family] search parameters
     } catch(e) {
       message.error(e.message);
       console.log('e.message: ', {errorMessage: e.message, firstname, lastname});
