@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, Link } from 'react-router-dom'
+import { useLocation } from 'react-router';
 import { Button, Card, Row, Col, DatePicker, Form, Input, message, Radio, Select, Space, Table, Spin } from 'antd';
+import { CSSTransition } from 'react-transition-group';
 import moment from 'moment';
 import fp from 'fhirpath';
 import questionnaire from './questionnaire.json';
@@ -362,9 +364,9 @@ function App() {
   </>
 }
 
-function About() {
+function About() {  
   return (<div className="page about container">
-    <div  style={{marginBottom: 25}}>
+    <div style={{marginBottom: 25}}>
       <h2 style={{textAlign: 'center'}}>Made with &#9825;</h2>
       <h6 style={{textAlign: 'center', wordWrap: 'break-word'}}>Thank you for giving me the opportunity to showcase my skills!</h6>
     </div>
@@ -433,10 +435,37 @@ function About() {
   </div>)
 }
 
+function TransitionWrapper({children, triggered, reset}) {
+  const location = useLocation();
+  const [opacity, setOpacity] = useState(0);
+  
+  useEffect(() => {
+    console.log("Location stuff", {location});
+    const timeout = setTimeout(() => setOpacity(1), 200);
+    return () => { reset(); clearTimeout(timeout); }
+  }, [location, reset])
+  
+  return <CSSTransition
+    in={triggered}
+    timeout={3000}
+    classNames="transition"
+    unmountOnExit
+  >
+    <div style={{opacity}}>{children}</div>
+  </CSSTransition>
+}
+
 function Main() {
+  const [triggered, setTriggered] = useState(true);
+
+  useEffect(() => {
+    if (triggered) { return; }
+    setTriggered(true)
+  }, [triggered, setTriggered])
+  
   return <Router>
     <Routes>
-      <Route path="/" element={ <><Navigation /><Outlet /></>}>
+      <Route path="/" element={<><Navigation /><TransitionWrapper triggered={triggered} reset={setTriggered}><Outlet /></TransitionWrapper></>}>
         <Route index element={<About />} />
         <Route path="/patients" element={<App />} />
         <Route path="/questionnaire" element={<Questionnaire />} />
