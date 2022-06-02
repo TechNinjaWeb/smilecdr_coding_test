@@ -1,4 +1,5 @@
 ## Challenges
+(Note: This is no longer the case after migrating from `https://try.smilecdr.com/baseR4/Patient` to `https://hapi.fhir.org/baseR4/Patient`)
 - The required endpoint does not allow me to make CORS requests in the browser.
 - Curl and Insomnia requests work as expected.
 - Preflight requests were triggered with just the presense of additional headers.
@@ -11,7 +12,7 @@
 - Lazy loading pages and images
 - More color and interactivity (tried to do page transitions, but not well enough)
 - Better organization of css and or use of dynamic (React) styling patterns
-- ~~Refactor components into their own files~~ Better refactoring
+- ~~Refactor components into their own files~~ More organization
 - One of the libraries uses a deprecated feature `findDOMNode` and leaves an ugly error in the console as a result
     - Removed `<React.StrictMode />` from `index.js`
 

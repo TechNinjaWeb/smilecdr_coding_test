@@ -4,7 +4,7 @@ import { message, DatePicker, Input, Radio, Select } from 'antd';
 import questionnaire from './questionnaire.json';
 import questionnaireResponse from './questionnaire-response.json';
 
-export const FETCH_PATIENTS_URL = `https://try.smilecdr.com/baseR4/Patient`;
+export const FETCH_PATIENTS_URL = `https://hapi.fhir.org/baseR4/Patient`;
 export const SUPPORTED_INPUT_TYPES = ['boolean', 'choice', 'date', 'string'];
 export const SUPPORTED_INPUT_VALUE_TYPES = ['valueBoolean', 'valueString', 'valueDate', 'valueString'];
 export const SUPPORTED_INPUT_TYPE_TRANSFORMS = [transformBoolean, noop, transformDate, noop];
@@ -93,8 +93,7 @@ export function addSearchParamsToUrl(url, params) {
     return `${url}?${sp.toString()}`
 }
 
-export function flatMapPatient(entry) {
-    const patient = entry?.resource;
+export function flatMapPatient(patient) {
     if (!patient || patient.resourceType !== 'Patient') { return <></>; }
   
     return {

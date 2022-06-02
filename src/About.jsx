@@ -32,7 +32,7 @@ function About() {
                 size="sm"
                 hoverable
                 style={{ height: '100%' }}
-                cover={<img style={{height: 300}} alt="Bill Bryson: A Short History Of Nearly Everything" src="//images-na.ssl-images-amazon.com/images/I/41gdQTWQgEL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg" />}
+                cover={<img style={{height: 300}} alt="Bill Bryson: A Short History Of Nearly Everything" src="https://images-na.ssl-images-amazon.com/images/I/41gdQTWQgEL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg" />}
               >
                 <Card.Meta
                   title="A Short History Of Nearly Everything"

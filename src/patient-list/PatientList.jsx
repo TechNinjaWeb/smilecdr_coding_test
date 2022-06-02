@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Button, Card, Form, Input, message, Space, Table } from 'antd';
 import moment from 'moment';
-import { addSearchParamsToUrl, FETCH_PATIENTS_URL, getPatientSorter } from '../helpers';
+import { addSearchParamsToUrl, FETCH_PATIENTS_URL, flatMapPatient, getPatientSorter } from '../helpers';
 
-function PatientList({patients}) {
+function PatientList({patients, loading, setLoading}) {
   const ALPHA_PATTERN = /^[a-z0-9 ]+$/gi;
   const [myPatients, setMyPatients] = useState();
-  const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
 
   useEffect(() => {
@@ -21,12 +20,17 @@ function PatientList({patients}) {
     setLoading(true);
 
     try {
-      const foundPatient = await fetch(addSearchParamsToUrl(FETCH_PATIENTS_URL, {given: firstname, family: lastname}))
-      setMyPatients(filter(patients, firstname, lastname));
+      const response = await fetch(addSearchParamsToUrl(FETCH_PATIENTS_URL, {given: firstname, family: lastname}))
       
-      console.log("Submitting", {evt, other, firstname, lastname, form, foundPatient});
-      if (foundPatient.ok === false) { throw Error(`${foundPatient.status}: Could not retrieve patients`)}
-      setMyPatients([foundPatient]); // Does not work until Fhir server implements [given,family] search parameters
+      if (response.ok === true) {
+        const thePatients = await response.json();
+        const matchingPatients = thePatients?.entry?.map(patient => flatMapPatient(patient.resource));
+        setMyPatients(matchingPatients);
+      }
+      else { 
+        setMyPatients(filter(patients, firstname, lastname));
+        throw Error(`${response.status}: Could not retrieve patients`)
+      }
     } catch(e) {
       message.error(e.message);
       console.log('e.message: ', {errorMessage: e.message, firstname, lastname});

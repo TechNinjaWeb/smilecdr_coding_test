@@ -3,7 +3,7 @@ import samplePatient from './patient.json';
 import patientsBundle from './patients.json';
 
 test('can flatmap patient list', () => {
-  const patients = [flatMapPatient({resource: samplePatient})];
+  const patients = [flatMapPatient(samplePatient)];
 
   expect(patients.length).toBeGreaterThan(0);
   expect(patients[0]?.firstname).toBe('Peter-James');
@@ -24,7 +24,7 @@ test('can create url with search parameters', () => {
 });
 
 test('patient firstnames can be sorted ascending', () => {
-  const patients = patientsBundle?.entry?.map(flatMapPatient).sort(getPatientSorter((patient) => patient.firstname));
+  const patients = patientsBundle?.entry?.map(patient => flatMapPatient(patient.resource)).sort(getPatientSorter((patient) => patient.firstname));
   const firstnames = patients.map(p => p?.firstname);
 
   expect(firstnames[0]).toBe('Jadu');

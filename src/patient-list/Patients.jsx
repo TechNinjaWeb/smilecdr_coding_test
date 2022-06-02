@@ -25,7 +25,7 @@ function Patients() {
             })
             .then(res => res.json());
   
-          setPatients(thePatients?.entry?.map(flatMapPatient));
+          setPatients(thePatients?.entry?.map(patient => flatMapPatient(patient.resource)));
         } catch (e) {
           console.error(e.stack);
           message.error(e.message);
@@ -36,7 +36,7 @@ function Patients() {
     }, [loading, loadedOnce]);
   
     return <>
-      <Spin spinning={loading}><PatientList patients={patients} /></Spin>
+      <Spin spinning={loading}><PatientList loading={loading} setLoading={setLoading} patients={patients} /></Spin>
       {apiPerformance && `Fetching patients took ${parseFloat(Number(apiPerformance).toFixed(2), 10)}ms`}
     </>
 }
