@@ -8,9 +8,11 @@
 - Readability
 - More thorough unit tests and possibly some integration tests
 - Employ a state management lib like redux or mobx
-- More color and interactivity
+- More color and interactivity (tried to do page transitions, but not well enough)
 - Better organization of css and or use of dynamic (React) styling patterns
-- Refactor components into their own files
+- ~~Refactor components into their own files~~ Better refactoring
+- One of the libraries uses a deprecated feature `findDOMNode` and leaves an ugly error in the console as a result
+    - Removed `<React.StrictMode />` from `index.js`
 
 ## Development Resources
 - https://ant.design/

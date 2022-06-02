@@ -1,4 +1,4 @@
-import { addSearchParamsToUrl, flatMapPatient, getPatientSorter } from './App';
+import { addSearchParamsToUrl, flatMapPatient, getPatientSorter } from './helpers';
 import samplePatient from './patient.json';
 import patientsBundle from './patients.json';
 
