@@ -1,0 +1,319 @@
+{
+	"resourceType": "Bundle",
+	"id": "c8eb3fde-6a88-4d6f-bc3f-7ceeefd086db",
+	"meta": {
+		"lastUpdated": "2022-06-01T06:19:05.091+00:00"
+	},
+	"type": "searchset",
+	"total": 9,
+	"link": [
+		{
+			"relation": "self",
+			"url": "https://try.smilecdr.com/baseR4/Patient"
+		}
+	],
+	"entry": [
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/202",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "202",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T05:57:04.584+00:00",
+					"source": "#dZy603y7w1NM8CdU"
+				},
+				"identifier": [
+					{
+						"system": "urn:oid:1.2.36.146.595.217.0.1",
+						"value": "12345"
+					}
+				],
+				"name": [
+					{
+						"family": "Chalmers",
+						"given": [
+							"Peter",
+							"James"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-25"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/203",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "203",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T06:50:26.820+00:00",
+					"source": "#BcQFK7y0ZRFDx3qt"
+				},
+				"identifier": [
+					{
+						"value": "1"
+					}
+				],
+				"name": [
+					{
+						"family": "Ram",
+						"given": [
+							"Sharma"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-25"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/204",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "204",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T06:50:56.412+00:00",
+					"source": "#LtVc8RdX5z4Bd9GV"
+				},
+				"identifier": [
+					{
+						"value": "1"
+					}
+				],
+				"name": [
+					{
+						"family": "Ram",
+						"given": [
+							"Sharma"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-25"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/205",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "205",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T07:36:47.495+00:00",
+					"source": "#bmnVtSoUiZXLoBAp"
+				},
+				"identifier": [
+					{
+						"value": "1"
+					}
+				],
+				"name": [
+					{
+						"family": "Ram",
+						"given": [
+							"Sharma"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-25"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/206",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "206",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T07:52:13.345+00:00",
+					"source": "#mNNjQJD6xTsxeVFl"
+				},
+				"identifier": [
+					{
+						"value": "1"
+					}
+				],
+				"name": [
+					{
+						"family": "Ram",
+						"given": [
+							"Sharma"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-25"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/207",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "207",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T07:59:37.768+00:00",
+					"source": "#nVUs5Y4zCAaecndH"
+				},
+				"identifier": [
+					{
+						"value": "1"
+					}
+				],
+				"name": [
+					{
+						"family": "Ram",
+						"given": [
+							"Sharma"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-25"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/208",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "208",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T08:31:05.107+00:00",
+					"source": "#g5RqfuE7G96afSt9"
+				},
+				"identifier": [
+					{
+						"system": "string",
+						"value": "12345"
+					}
+				],
+				"name": [
+					{
+						"family": "Shyam",
+						"given": [
+							"Sharma"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-25"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/209",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "209",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T08:41:19.183+00:00",
+					"source": "#TKtALmI5oiSV2h39"
+				},
+				"identifier": [
+					{
+						"system": "12121",
+						"value": "1234567"
+					}
+				],
+				"name": [
+					{
+						"family": "Sharma",
+						"given": [
+							"Jadu"
+						]
+					}
+				],
+				"gender": "male",
+				"birthDate": "1974-12-24"
+			},
+			"search": {
+				"mode": "match"
+			}
+		},
+		{
+			"fullUrl": "https://try.smilecdr.com/baseR4/Patient/mike",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "mike",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2022-05-31T19:46:17.183+00:00",
+					"source": "#3wj70B6jXzvZKj5S",
+					"profile": [
+						"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+					]
+				},
+				"name": [
+					{
+						"family": "Consoli",
+						"given": [
+							"Mike"
+						],
+						"prefix": [
+							"Mrs"
+						]
+					}
+				],
+				"telecom": [
+					{
+						"system": "phone",
+						"value": "1-800-683-1318",
+						"use": "home"
+					}
+				],
+				"gender": "female",
+				"birthDate": "1960-09-30",
+				"address": [
+					{
+						"line": [
+							"622 College Street"
+						],
+						"city": "Toronto",
+						"state": "Ontario",
+						"country": "Canada"
+					}
+				],
+				"generalPractitioner": [
+					{
+						"reference": "Practitioner/P1",
+						"display": "Dr S. Freep"
+					}
+				],
+				"managingOrganization": {
+					"reference": "Organization/O1",
+					"display": "Bedrock General Hospital"
+				}
+			},
+			"search": {
+				"mode": "match"
+			}
+		}
+	]
+}

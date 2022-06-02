@@ -1,0 +1,76 @@
+{
+	"resourceType": "QuestionnaireResponse",
+	"id": "505",
+	"questionnaire": "http://hl7.org/fhir/Questionnaire/f201",
+	"status": "completed",
+	"subject": {
+		"reference": "Patient/f201"
+	},
+	"authored": "2018-02-14T13:29:47-05:00",
+	"author": {
+		"reference": "Practitioner/27"
+	},
+	"item": [
+		{
+			"linkId": "1",
+			"text": "Do you have allergies?",
+			"answer": [
+				{
+					"valueBoolean": false
+				}
+			]
+		},
+		{
+			"linkId": "2",
+			"text": "What is your gender?",
+			"answer": [
+				{
+					"valueString": "other"
+				}
+			]
+		},
+		{
+			"linkId": "3",
+			"text": "What is your date of birth?",
+			"answer": [
+				{
+					"valueDate": "2021-08-19"
+				}
+			]
+		},
+		{
+			"linkId": "4",
+			"text": "What is your country of birth?",
+			"answer": [{
+				"valueString": "Canada"
+			}]
+		},
+		{
+			"linkId": "5",
+			"text": "What is your marital status?",
+			"answer": [
+				{
+					"valueString": "divorced"
+				}
+			]
+		},
+		{
+			"linkId": "6",
+			"text": "Do you smoke?",
+			"answer": [
+				{
+					"valueBoolean": false
+				}
+			]
+		},
+		{
+			"linkId": "7",
+			"text": "Do you drink alchohol?",
+			"answer": [
+				{
+					"valueBoolean": false
+				}
+			]
+		}
+	]
+}
