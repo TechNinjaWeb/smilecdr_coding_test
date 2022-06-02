@@ -8,6 +8,7 @@
 - Readability
 - More thorough unit tests and possibly some integration tests
 - Employ a state management lib like redux or mobx
+- Lazy loading pages and images
 - More color and interactivity (tried to do page transitions, but not well enough)
 - Better organization of css and or use of dynamic (React) styling patterns
 - ~~Refactor components into their own files~~ Better refactoring
