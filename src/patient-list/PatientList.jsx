@@ -81,6 +81,11 @@ function PatientList({patients, loading, setLoading}) {
       ellipsis: true,
     },
     {
+      title: 'Gender',
+      dataIndex: 'gender',
+      key: 'gender',
+    },
+    {
       title: 'Birthdate',
       dataIndex: 'birthdate',
       key: 'birthdate',
