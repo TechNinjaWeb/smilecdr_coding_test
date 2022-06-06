@@ -4,7 +4,7 @@ import { message, DatePicker, Input, Radio, Select } from 'antd';
 import questionnaire from './questionnaire.json';
 import questionnaireResponse from './questionnaire-response.json';
 
-export const FETCH_PATIENTS_URL = `https://hapi.fhir.org/baseR4/Patient`;
+export const FETCH_PATIENTS_URL = prompt('Enter the URL to fetch Patients from: (eg: https://lforms-fhir.nlm.nih.gov/baseR4/Patient') || `https://hapi.fhir.org/baseR4`;
 export const SUPPORTED_INPUT_TYPES = ['boolean', 'choice', 'date', 'string'];
 export const SUPPORTED_INPUT_VALUE_TYPES = ['valueBoolean', 'valueString', 'valueDate', 'valueString'];
 export const SUPPORTED_INPUT_TYPE_TRANSFORMS = [transformBoolean, noop, transformDate, noop];
@@ -58,25 +58,25 @@ function getOptions(question) {
 }
 
 export function getInput(question) {
-    if (SUPPORTED_INPUT_TYPES.indexOf(question.type) < 0) { return "No Question here"; }
+  if (SUPPORTED_INPUT_TYPES.indexOf(question.type) < 0) { return "No Question here"; }
 
-    switch(question.type) {
-      case 'boolean':
-        return <Radio.Group options={[{label: 'True', value: 'true'}, {label: 'False', value: 'false'}]} />;
-      case 'choice':
-        return <Select>
-          {getOptions(question).map((option, key) => {
-            return <Select.Option key={key} value={option?.label}>{option?.value}</Select.Option>
-          })}
-        </Select>;
-      case 'date':
-        return <DatePicker style={{width: "100%"}} />;
-      case 'string':
-        return <Input />;
-      default:
-        return;
-    }
+  switch(question.type) {
+    case 'boolean':
+      return <Radio.Group options={[{label: 'True', value: 'true'}, {label: 'False', value: 'false'}]} />;
+    case 'choice':
+      return <Select>
+        {getOptions(question).map((option, key) => {
+          return <Select.Option key={key} value={option?.label}>{option?.value}</Select.Option>
+        })}
+      </Select>;
+    case 'date':
+      return <DatePicker style={{width: "100%"}} />;
+    case 'string':
+      return <Input />;
+    default:
+      return;
   }
+}
 
 export function getPatientSorter(toString) {
     return (a, b) => (toString(a)?.toLowerCase() || '').localeCompare(toString(b)?.toLowerCase());
